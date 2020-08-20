@@ -11,6 +11,7 @@
 
     <!-- Title Page-->
     <title>Dashboard</title>
+    <link rel="icon" type="image/jpg" href="{!! asset('assets/loginform/images/rsz_3logo.jpg') !!}">
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -57,6 +58,14 @@
 </head>
 
 <body class="animsition">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    @include('layouts.dashboard.header-mobile')
+
+    @include('layouts.dashboard.header')
+
+    @include('layouts.dashboard.sidebar')
 
     @yield('content')
 
@@ -107,6 +116,7 @@
     <!-- Main JS-->
     <script src="js/main.js"></script>
     {{Html::script('assets/cooladmin/js/main.js')}}
+
 
 </body>
 

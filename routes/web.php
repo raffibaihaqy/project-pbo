@@ -18,3 +18,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//User
+Route::resource('/daftar-user', 'DaftarController');
+Route::post('/post-daftar-user', 'DaftarController@store');
+Route::put('/edit-daftar-user/{id}', 'DaftarController@update');
+
+//Informasi Toko
+Route::resource('/informasi-toko', 'InformasiTokoController');
+Route::post('/post-informasi-toko', 'InformasiTokoController@store');
+Route::put('/edit-informasi-toko/{id}', 'InformasiTokoController@update');

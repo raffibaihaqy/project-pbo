@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserTable extends Migration
+class CreateInformasitokoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('admin', function (Blueprint $table) {
+        Schema::create('informasitoko', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nama');
+            $table->string('nama_instansi');
             $table->string('telp');
+            $table->string('kode_pos');
+            $table->string('deskripsi');
             $table->string('alamat');
-            $table->string('username');
-            $table->string('password');
-            $table->string('hak_akses');
             $table->string('image');
             $table->timestamps();
         });
@@ -33,6 +32,6 @@ class CreateUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user');
+        Schema::dropIfExists('informasitoko');
     }
 }
