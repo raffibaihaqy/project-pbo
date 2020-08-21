@@ -32,9 +32,9 @@
                                             <td><img src="{{ url('uploads').'/'. $daf->image }}" alt="{{ $daf->image }}" style="width:75px;" class="img-thumbnail"></td>
                                             <td>{{$daf->nama_instansi}}</td>
                                             <td>{{$daf->telp}}</td>
-                                            <td>{{$daf->alamat}}</td>
+                                            <td>{{mb_substr($daf->alamat, 0, 30)}}...</td>
                                             <td>{{$daf->kode_pos}}</td>
-                                            <td>{{$daf->deskripsi}}</td>
+                                            <td>{{ mb_substr($daf->deskripsi, 0, 30) }}...</td>
                                             <td>
                                                 <div class="table-data-feature">
                                                     {{ Form::open(['route' => ['informasi-toko.edit', $daf->id], 'method'=>'GET']) }}

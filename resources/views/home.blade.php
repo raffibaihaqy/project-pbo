@@ -1,6 +1,9 @@
 @extends('layouts.dashboard.content')
 
 @section('content')
+@php
+    $inf = App\InformasiToko::first();
+@endphp
 <div class="page-wrapper">
     <!-- HEADER MOBILE-->
     <header class="header-mobile d-block d-lg-none">
@@ -63,6 +66,35 @@
                                 <i class="zmdi zmdi-search"></i>
                             </button>
                         </form>
+                            <div class="account-wrap">
+                                <div class="account-item clearfix js-item-menu">
+                                    <div class="image">
+                                        <img src="{{ url('uploads').'/'. $inf->image }}" alt="{{ $inf->image }}" style="width:50px;" class="img-thumbnail">
+                                    </div>
+                                    <div class="content">
+                                        <a class="js-acc-btn" href="#">{{$inf->nama_instansi}}</a>
+                                    </div>
+                                    <div class="account-dropdown js-dropdown">
+                                        <div class="info clearfix">
+                                            <div class="image">
+                                                <a href="#">
+                                                    <img src="{{ url('uploads').'/'. $inf->image }}" alt="{{ $inf->image }}" style="width:50px;" class="img-thumbnail">
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <h5 class="name">
+                                                    <a href="#">{{$inf->nama_instansi}}</a>
+                                                </h5>
+                                                <span class="email">{{$inf->kode_pos}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="account-dropdown__footer">
+                                            <a href="{{url('/logout')}}">
+                                                <i class="zmdi zmdi-power"></i>Logout</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -113,7 +145,7 @@
                             </a>
                         </div>
                         <div class="col-sm-6 col-lg-3">
-                            <a href="">
+                            <a href="{{url('inventory-produk')}}">
                                 <div class="overview-item overview-item--c3">
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">

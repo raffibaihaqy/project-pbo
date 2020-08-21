@@ -19,6 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+//Logout
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
 //User
 Route::resource('/daftar-user', 'DaftarController');
 Route::post('/post-daftar-user', 'DaftarController@store');
@@ -28,3 +31,9 @@ Route::put('/edit-daftar-user/{id}', 'DaftarController@update');
 Route::resource('/informasi-toko', 'InformasiTokoController');
 Route::post('/post-informasi-toko', 'InformasiTokoController@store');
 Route::put('/edit-informasi-toko/{id}', 'InformasiTokoController@update');
+
+//Inventory
+Route::resource('/inventory-produk', 'InventoryProdukController');
+Route::post('/post-inventory-produk', 'InventoryProdukController@store');
+Route::put('/edit-inventory-produk/{id}', 'InventoryProdukController@update');
+Route::get('/export-print-word/{id}', 'InventoryProdukController@wordExport');

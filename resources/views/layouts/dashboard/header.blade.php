@@ -1,3 +1,6 @@
+@php
+    $inf = App\InformasiToko::first();
+@endphp
 <header class="header-desktop">
     <div class="section__content section__content--p30">
         <div class="container-fluid">
@@ -9,6 +12,35 @@
                         <i class="zmdi zmdi-search"></i>
                     </button>
                 </form>
+                <div class="account-wrap">
+                    <div class="account-item clearfix js-item-menu">
+                        <div class="image">
+                            <img src="{{ url('uploads').'/'. $inf->image }}" alt="{{ $inf->image }}" style="width:50px;" class="img-thumbnail">
+                        </div>
+                        <div class="content">
+                            <a class="js-acc-btn" href="#">{{$inf->nama_instansi}}</a>
+                        </div>
+                        <div class="account-dropdown js-dropdown">
+                            <div class="info clearfix">
+                                <div class="image">
+                                    <a href="#">
+                                        <img src="{{ url('uploads').'/'. $inf->image }}" alt="{{ $inf->image }}" style="width:50px;" class="img-thumbnail">
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h5 class="name">
+                                        <a href="#">{{$inf->nama_instansi}}</a>
+                                    </h5>
+                                    <span class="email">{{$inf->kode_pos}}</span>
+                                </div>
+                            </div>
+                            <div class="account-dropdown__footer">
+                                <a href="{{url('/logout')}}">
+                                    <i class="zmdi zmdi-power"></i>Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

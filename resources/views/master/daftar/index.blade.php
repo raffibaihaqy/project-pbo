@@ -22,7 +22,6 @@
                                             <th>telp</th>
                                             <th>alamat</th>
                                             <th>username</th>
-                                            <th>password</th>
                                             <th>hak akses</th>
                                             <th>action</th>
                                         </tr>
@@ -33,9 +32,8 @@
                                             <td><img src="{{ url('uploads').'/'. $daf->image }}" alt="{{ $daf->image }}" style="width:75px;" class="img-thumbnail"></td>
                                             <td>{{$daf->nama}}</td>
                                             <td>{{$daf->telp}}</td>
-                                            <td>{{$daf->alamat}}</td>
+                                            <td>{{mb_substr($daf->alamat, 0, 30)}}...</td>
                                             <td>{{$daf->username}}</td>
-                                            <td>{{$daf->password}}</td>
                                             <td>{{$daf->hak_akses}}</td>
                                             <td>
                                                 <div class="table-data-feature">

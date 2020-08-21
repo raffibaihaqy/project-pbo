@@ -14,7 +14,7 @@ class CreateProdukTable extends Migration
     public function up()
     {
         Schema::create('produk', function (Blueprint $table) {
-            $table->bigIncrements('kode');
+            $table->bigIncrements('id');
             $table->string('nama');
             $table->string('unit');
             $table->string('curr');
@@ -25,10 +25,9 @@ class CreateProdukTable extends Migration
             $table->string('barcode');
             $table->string('status');
             $table->string('expired');
-            $table->string('print_label');
             $table->string('kategori');
             $table->text('ket');
-            $table->string('untung');
+            $table->text('image');
             $table->timestamps();
         });
     }
