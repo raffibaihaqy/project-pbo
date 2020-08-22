@@ -25,7 +25,7 @@
 
 <div class="form-group {{ $errors ?? ''->has('hak_akses') ? 'has-error' : '' }}">
     {{ Form::label('hak_akses', 'Hak Akses') }}
-    {{ Form::text('hak_akses',$daftar->hak_akses,['class'=>'form-control border-input','placeholder'=>'Pilih hak akses']) }}
+    {{ Form::select('hak_akses', array('Admin' => 'Admin', 'Kasir' => 'Kasir')) }}
 </div>
 
 <div class="form-group {{ $errors ?? ''->has('foto') ? 'has-error' : '' }}">

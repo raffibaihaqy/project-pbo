@@ -10,7 +10,7 @@
 
 <div class="form-group {{ $errors ?? ''->has('curr') ? 'has-error' : '' }}">
     {{ Form::label('curr', 'Curr') }}
-    {{ Form::text('curr',$inventory->curr,['class'=>'form-control border-input','placeholder'=>'IDR']) }}
+    {{ Form::select('curr', array('IDR' => 'IDR', 'DLR' => 'DLR')) }}
 </div>
 
 <div class="form-group {{ $errors ?? ''->has('harga_beli') ? 'has-error' : '' }}">
@@ -39,8 +39,8 @@
 </div>
 
 <div class="form-group {{ $errors ?? ''->has('status') ? 'has-error' : '' }}">
-    {{ Form::label('status', 'Status Produk') }}
-    {{ Form::text('status',$inventory->status,['class'=>'form-control border-input','placeholder'=>'Tersedia atau tidak tersedia']) }}
+    {{ Form::label('status', 'Status produk') }}
+    {{ Form::select('status', array('Tersedia' => 'Tersedia', 'Habis' => 'Habis')) }}
 </div>
 
 <div class="form-group {{ $errors ?? ''->has('expired') ? 'has-error' : '' }}">
@@ -50,7 +50,14 @@
 
 <div class="form-group {{ $errors ?? ''->has('kategori') ? 'has-error' : '' }}">
     {{ Form::label('kategori', 'Pilih Kategori') }}
-    {{ Form::text('kategori',$inventory->kategori,['class'=>'form-control border-input','placeholder'=>'Kategori produk']) }}
+    <select name="kategori" id="kategori">
+        <option value="{{$inventory->id}}" selected>{{$inventory->nama_kategori}}</option>
+        @foreach ($kategori as $kat)
+            @if ($kat->id != $inventory->id)
+                <option value="{{$kat->id}}">{{$kat->nama_kategori}}</option>
+            @endif
+        @endforeach
+    </select>
 </div>
 
 <div class="form-group {{ $errors ?? ''->has('ket') ? 'has-error' : '' }}">

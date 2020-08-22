@@ -13,7 +13,7 @@
                 </li>
                 <li>
                     <a href=""></a>
-                    <button type="button" class="btn btn-info" onclick="window.location='{{url('informasi-toko')}}'"><i class="fa fa-window-restore"></i> Informasi Toko</button>
+                    <button type="button" class="btn btn-warning" onclick="window.location='{{url('informasi-toko')}}'"><i class="fa fa-window-restore"></i> Informasi Toko</button>
                 </li>
             </ul>
         </nav>

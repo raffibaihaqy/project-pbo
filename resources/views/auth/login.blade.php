@@ -7,6 +7,11 @@
             @if (Route::has('login'))
                 <div class="login100-pic js-tilt" data-tilt>
                     <img src="{{URL::asset('assets/loginform/images/rsz_3logo.jpg')}}" alt="IMG">
+                    <div class="text-center p-t-12">
+                        <span class="txt1">
+                            Jl. Mayjen Sutoyo, RT.2/RW.9, Cawang, Kec. Kramat jati, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13630
+                        </span>
+                    </div>
                 </div>
 
                 <form method="POST" action="{{ route('login') }}" class="login100-form validate-form">

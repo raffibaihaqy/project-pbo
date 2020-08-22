@@ -17,7 +17,7 @@
                     </li>
                     <li>
                         <a href=""></a>
-                        <button type="button" class="btn btn-warning" onclick="window.location='{{url('informasi-toko')}}'"><i class="fa fa-tasks"></i> List Kategori</button>
+                        <button type="button" class="btn btn-warning" onclick="window.location='{{url('kategori-produk')}}'"><i class="fa fa-tasks"></i> List Kategori</button>
                     </li>
                 </ul>
             </nav>
@@ -69,10 +69,10 @@
                                                 <td>{{ mb_substr($inv->ket, 0, 20) }}...</td>
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <a href="{{url('export-print-word/' . $inv->id)}}" class="btn btn-success">print</a>
+                                                        <a href="{{url('export-print-word/' . $inv->id)}}" class="btn btn-info">print</a>
                                                         <br>
                                                         {{ Form::open(['route' => ['inventory-produk.edit', $inv->id], 'method'=>'GET']) }}
-                                                            {{ Form::button('edit', ['type'=>'submit', 'class' => 'btn btn-info']) }}
+                                                            {{ Form::button('edit', ['type'=>'submit', 'class' => 'btn btn-success']) }}
                                                         {{ Form::close() }}
                                                         <br>
                                                         {{ Form::open(['route' => ['inventory-produk.destroy', $inv->id], 'method'=>'DELETE']) }}

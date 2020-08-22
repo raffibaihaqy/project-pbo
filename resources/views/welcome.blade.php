@@ -1,19 +1,15 @@
 @extends('layouts.login.content')
 
 @section('content')
-@php
-    $informasi = App\InformasiToko::all();
-@endphp
 <div class="limiter">
     <div class="container-login100">
         <div class="wrap-login100">
             @if (Route::has('login'))
-                @foreach ($informasi as $daf)
                     <div class="login100-pic js-tilt" data-tilt>
-                        <img src="{{ url('uploads').'/'. $daf->image }}" alt="{{ $daf->image }}" alt="IMG">
+                        <img src="{{URL::asset('assets/loginform/images/rsz_3logo.jpg')}}" alt="IMG">
                         <div class="text-center p-t-12">
                             <span class="txt1">
-                                {{$daf->alamat}}
+                                Jl. Mayjen Sutoyo, RT.2/RW.9, Cawang, Kec. Kramat jati, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13630
                             </span>
                         </div>
                     </div>
@@ -76,7 +72,6 @@
                             @endif
                         </div>
                     </form>
-                @endforeach
             @endif
         </div>
     </div>

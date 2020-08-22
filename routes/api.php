@@ -29,3 +29,9 @@ Route::put('/edit-daftar-user/{id}', 'DaftarController@update');
 Route::resource('/informasi-toko', 'InformasiTokoController');
 Route::post('/post-informasi-toko', 'InformasiTokoController@store');
 Route::put('/edit-informasi-toko/{id}', 'InformasiTokoController@update');
+
+//Inventory produk
+Route::resource('/inventory-produk', 'InventoryProdukController');
+Route::post('/post-inventory-produk', 'InventoryProdukController@store');
+Route::put('/edit-inventory-produk/{id}', 'InventoryProdukController@update');
+Route::get('/export-print-word/{id}', 'InventoryProdukController@wordExport');

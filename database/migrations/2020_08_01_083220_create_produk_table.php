@@ -28,6 +28,7 @@ class CreateProdukTable extends Migration
             $table->string('kategori');
             $table->text('ket');
             $table->text('image');
+            $table->integer('cat_id');
             $table->timestamps();
         });
     }

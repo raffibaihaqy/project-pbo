@@ -17,7 +17,7 @@
                 </li>
                 <li>
                     <a href=""></a>
-                    <button type="button" class="btn btn-warning" onclick="window.location='{{url('informasi-toko')}}'"><i class="fa fa-tasks"></i> List Kategori</button>
+                    <button type="button" class="btn btn-warning" onclick="window.location='{{url('kategori-produk')}}'"><i class="fa fa-tasks"></i> List Kategori</button>
                 </li>
             </ul>
         </nav>

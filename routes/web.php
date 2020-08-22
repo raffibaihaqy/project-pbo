@@ -32,8 +32,13 @@ Route::resource('/informasi-toko', 'InformasiTokoController');
 Route::post('/post-informasi-toko', 'InformasiTokoController@store');
 Route::put('/edit-informasi-toko/{id}', 'InformasiTokoController@update');
 
-//Inventory
+//Inventory produk
 Route::resource('/inventory-produk', 'InventoryProdukController');
 Route::post('/post-inventory-produk', 'InventoryProdukController@store');
 Route::put('/edit-inventory-produk/{id}', 'InventoryProdukController@update');
 Route::get('/export-print-word/{id}', 'InventoryProdukController@wordExport');
+
+//Kategori
+Route::resource('/kategori-produk', 'KategoriController');
+Route::post('/post-kategori-produk', 'KategoriController@store');
+Route::put('/edit-kategori-produk/{id}', 'KategoriController@update');

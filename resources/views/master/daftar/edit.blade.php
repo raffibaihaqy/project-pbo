@@ -18,7 +18,7 @@
                                 @include('master.daftar._fields')
 
                                 <div class="form-group">
-                                    {{ Form::submit('Update', ['class'=>'btn btn-success']) }}
+                                    {{ Form::submit('Confirm', ['class'=>'btn btn-success']) }}
                                     <button type="button" onclick="window.location='{{url('daftar-user')}}'" class="btn btn-danger">Cancel</button>
                                 </div>
 

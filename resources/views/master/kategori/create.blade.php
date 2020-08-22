@@ -17,7 +17,7 @@
                 </li>
                 <li>
                     <a href=""></a>
-                    <button type="button" class="btn btn-warning" onclick="window.location='{{url('informasi-toko')}}'"><i class="fa fa-tasks"></i> List Kategori</button>
+                    <button type="button" class="btn btn-warning" onclick="window.location='{{url('kategori-produk')}}'"><i class="fa fa-tasks"></i> List Kategori</button>
                 </li>
             </ul>
         </nav>
@@ -35,15 +35,15 @@
             <div class="section__content section__content--p30">
                 <div class="container-fluid">
                     <div class="content">
-                        {!! Form::open(['url' => ['edit-inventory-produk', $inventory->id], 'files'=>'true', 'method'=>'put']) !!}
+                        {!! Form::open(['url' => 'post-kategori-produk', 'files'=>'true']) !!}
                         <div class="row">
                             <div class="col-md-12">
 
-                                @include('master.masterproduk._fields')
+                                @include('master.kategori._fields')
 
                                 <div class="form-group">
-                                    {{ Form::submit('Confirm', ['class'=>'btn btn-success']) }}
-                                    <button type="button" onclick="window.location='{{url('inventory-produk')}}'" class="btn btn-danger">Cancel</button>
+                                    {{ Form::submit('Tambah', ['class'=>'btn btn-success']) }}
+                                    <button type="button" onclick="window.location='{{url('kategori-produk')}}'" class="btn btn-danger">Cancel</button>
                                 </div>
 
                             </div>

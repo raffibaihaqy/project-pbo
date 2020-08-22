@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\InventoryProduk;
+use App\Kategori;
 use PhpOffice\PhpWord\TemplateProcessor;
+use DB;
 
 class InventoryProdukController extends Controller
 {
@@ -17,7 +19,9 @@ class InventoryProdukController extends Controller
     public function create()
     {
         $inventory = new InventoryProduk();
-        return view('master.masterproduk.create', compact('inventory'));
+        $kategori = Kategori::all();
+
+        return view('master.masterproduk.create', compact('inventory','kategori'));
     }
 
     public function store(Request $request)

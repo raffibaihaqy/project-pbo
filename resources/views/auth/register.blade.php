@@ -6,12 +6,17 @@
         <div class="wrap-login100">
                 <div class="login100-pic js-tilt" data-tilt>
                     <img src="{{URL::asset('assets/loginform/images/rsz_3logo.jpg')}}" alt="IMG">
+                    <div class="text-center p-t-12">
+                        <span class="txt1">
+                            Jl. Mayjen Sutoyo, RT.2/RW.9, Cawang, Kec. Kramat jati, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13630
+                        </span>
+                    </div>
                 </div>
 
                 <form method="POST" action="{{ route('register') }}" class="login100-form validate-form">
                     @csrf
                     <span class="login100-form-title">
-                        Admin Register
+                        Register
                     </span>
 
                     <div class="wrap-input100 validate-input" data-validate = "Valid name is required">

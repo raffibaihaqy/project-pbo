@@ -17,4 +17,9 @@ class InventoryProduk extends Model
         'image', 'kategori',
         'keterangan', 'ket',
     ];
+
+    public function katPro()
+    {
+        return $this->belongsTo(Kategori::class);
+    }
 }
