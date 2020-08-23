@@ -42,10 +42,14 @@
         <div class="menu-sidebar__content js-scrollbar1">
             <nav class="navbar-sidebar">
                 <ul class="list-unstyled navbar__list">
+                    <li>
+                        <a href=""></a>
+                    </li>
                     <li class="active has-sub">
                         <button type="button" class="btn btn-info" onclick="window.location='{{url('/home')}}'">
                             <i class="fa fa-tachometer"></i>
                              Dashboard</button>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -110,7 +114,7 @@
                             </a>
                         </div>
                         <div class="col-sm-6 col-lg-3">
-                            <a href="">
+                            <a href="{{url('kasir-produk')}}">
                                 <div class="overview-item overview-item--c2">
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
@@ -148,7 +152,7 @@
                             </a>
                         </div>
                         <div class="col-sm-6 col-lg-3">
-                            <a href="">
+                            <a href="{{url('laporan-produk')}}">
                                 <div class="overview-item overview-item--c4">
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">

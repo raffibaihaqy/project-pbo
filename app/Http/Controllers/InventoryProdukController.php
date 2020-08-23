@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\InventoryProduk;
 use App\Kategori;
+use App\Curr;
+use App\Transaksi;
 use PhpOffice\PhpWord\TemplateProcessor;
 use DB;
 
@@ -20,8 +22,9 @@ class InventoryProdukController extends Controller
     {
         $inventory = new InventoryProduk();
         $kategori = Kategori::all();
+        $curr = Curr::all();
 
-        return view('master.masterproduk.create', compact('inventory','kategori'));
+        return view('master.masterproduk.create', compact('inventory','kategori','curr'));
     }
 
     public function store(Request $request)
@@ -61,7 +64,10 @@ class InventoryProdukController extends Controller
     public function edit($id)
     {
         $inventory = InventoryProduk::find($id);
-        return view('master.masterproduk.edit', compact('inventory'));
+        $kategori = Kategori::all();
+        $curr = Curr::all();
+
+        return view('master.masterproduk.edit', compact('inventory','kategori','curr'));
     }
 
     public function update(Request $request, $id)
@@ -131,6 +137,27 @@ class InventoryProdukController extends Controller
         $templateProcessor->setValue('image', $inventory->image);
         $fileName = $inventory->nama;
         $templateProcessor->saveAs($fileName . '.docx');
+
         return response()->download($fileName . '.docx')->deleteFileAfterSend(true);
+    }
+
+    public function laporan()
+    {
+        $inventory = InventoryProduk::all();
+        return view('master.laporan.index', compact('inventory'));
+    }
+
+    public function laporanExport($id)
+    {
+        $inventory = InventoryProduk::find($id);
+        $templateProcessor = new TemplateProcessor('word-template/laporan.docx');
+        $templateProcessor->setValue('nama', $inventory->nama);
+        $templateProcessor->setValue('unit', $inventory->unit);
+        $templateProcessor->setValue('stok', $inventory->stok);
+        $templateProcessor->setValue('barcode', $inventory->barcode);
+        $templateProcessor->setValue('created_at', $inventory->created_at);
+        $templateProcessor->saveAs('Laporan.docx');
+
+        return response()->download('Laporan.docx')->deleteFileAfterSend(true);
     }
 }

@@ -19,6 +19,10 @@
                         <a href=""></a>
                         <button type="button" class="btn btn-warning" onclick="window.location='{{url('kategori-produk')}}'"><i class="fa fa-tasks"></i> List Kategori</button>
                     </li>
+                    <li>
+                        <a href=""></a>
+                        <button type="button" class="btn btn-success" onclick="window.location='{{url('curr-produk')}}'"><i class="fa fa-dollar"></i> List Curr</button>
+                    </li>
                 </ul>
             </nav>
         </div>

@@ -17,6 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
 //Admin
 Route::get('admin', 'API\AdminController@index');
 
@@ -35,3 +36,17 @@ Route::resource('/inventory-produk', 'InventoryProdukController');
 Route::post('/post-inventory-produk', 'InventoryProdukController@store');
 Route::put('/edit-inventory-produk/{id}', 'InventoryProdukController@update');
 Route::get('/export-print-word/{id}', 'InventoryProdukController@wordExport');
+
+//Kategori
+Route::resource('/kategori-produk', 'KategoriController');
+Route::post('/post-kategori-produk', 'KategoriController@store');
+Route::put('/edit-kategori-produk/{id}', 'KategoriController@update');
+
+//Curr
+Route::resource('/curr-produk', 'CurrController');
+Route::post('/post-curr-produk', 'CurrController@store');
+Route::put('/edit-curr-produk/{id}', 'CurrController@update');
+
+//Laporan
+Route::get('/laporan-produk', 'InventoryProdukController@laporan');
+Route::get('/export-laporan-produk/{id}', 'InventoryProdukController@laporanExport');

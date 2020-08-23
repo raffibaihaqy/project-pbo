@@ -10,7 +10,11 @@
 
 <div class="form-group {{ $errors ?? ''->has('curr') ? 'has-error' : '' }}">
     {{ Form::label('curr', 'Curr') }}
-    {{ Form::select('curr', array('IDR' => 'IDR', 'DLR' => 'DLR')) }}
+    <select name="curr" id="curr">
+        @foreach ($curr as $cur)
+            <option value="{{$inventory->id}}">{{$cur->curr}}</option>
+        @endforeach
+    </select>
 </div>
 
 <div class="form-group {{ $errors ?? ''->has('harga_beli') ? 'has-error' : '' }}">

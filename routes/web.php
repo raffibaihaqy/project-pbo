@@ -42,3 +42,20 @@ Route::get('/export-print-word/{id}', 'InventoryProdukController@wordExport');
 Route::resource('/kategori-produk', 'KategoriController');
 Route::post('/post-kategori-produk', 'KategoriController@store');
 Route::put('/edit-kategori-produk/{id}', 'KategoriController@update');
+
+//Curr
+Route::resource('/curr-produk', 'CurrController');
+Route::post('/post-curr-produk', 'CurrController@store');
+Route::put('/edit-curr-produk/{id}', 'CurrController@update');
+
+//Laporan
+Route::get('/laporan-produk', 'InventoryProdukController@laporan');
+Route::get('/export-laporan-produk/{id}', 'InventoryProdukController@laporanExport');
+
+//Transaksi
+Route::resource('/transaksi-produk', 'TransaksiController');
+Route::post('/post-transaksi-produk', 'TransaksiController@store');
+Route::get('/list-transaksi-produk', 'TransaksiController@semuaTransaksi');
+Route::get('/list-transaksi-produk/destroy/{id}', 'TransaksiController@destroy');
+Route::get('/print-transaksi-produk/{id}', 'TransaksiController@exportWord');
+
