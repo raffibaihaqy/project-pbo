@@ -1,3 +1,31 @@
+## How to use
+
+1. go to https://pecl.php.net/package/mongodb/1.8.0beta1/windows & download the 7.4 Thread Safe (TS) x64
+
+2. after download, you'll see the php_mongodb.dll file and copy paste to C:\xampp\php\ext
+
+3. next go to C:\xampp\php and search for php.ini file
+
+4. in php.ini file, add this line extension=php_mongodb.dll
+
+5. run composer install
+
+6. next, rename env.example to .env and setup like this
+DB_CONNECTION=mongodb
+DB_HOST=127.0.0.1
+DB_PORT=27017
+DB_DATABASE=laravel
+DB_USERNAME=
+DB_PASSWORD=
+
+7. run php artisan key:generate
+
+8. run php artisan migrate
+
+9. run php artisan serve
+
+NOTE : if u are confused with the setup, u can see the full tutorial setting up ur mongodb databases integrated with laravel here https://www.youtube.com/watch?v=QAMl_fZIGE0&list=PLdTx40waQWgHIh3Kegr14vvSF-QsRd40J&index=2
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
