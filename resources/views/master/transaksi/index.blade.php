@@ -46,7 +46,7 @@
                                                     @include('master.transaksi._fields')
 
                                                     <div class="form-group">
-                                                        {{ Form::submit('Tambah', ['class'=>'btn btn-success']) }}
+                                                        {{ Form::submit('Submit', ['class'=>'btn btn-success']) }}
                                                     </div>
 
                                                 </div>
